@@ -90,3 +90,10 @@ This is the place for you to write reflections:
 2. Menurut saya, Rust tidak membolehkan isi static variable diubah sembarangan seperti di Java karena Rust lebih ketat dalam menjaga keamanan program. Data global sangat rawan kalau bisa dimutasi bebas, apalagi dalam program yang bisa berjalan dengan banyak thread. Karena itu Rust meminta kita memakai mekanisme yang aman seperti RwLock, Mutex, atau DashMap. lazy_static dipakai supaya data global bisa dibuat dengan aman dan baru diinisialisasi saat dibutuhkan.
 
 #### Reflection Subscriber-2
+
+1. Saya belum terlalu jauh mengeksplor bagian lain seperti src/lib.rs, karena saya fokus dulu menyelesaikan alur utama tutorial agar fiturnya benar-benar berjalan. Menurut saya, itu perlu diprioritaskan dulu. Namun, saya sadar bahwa melihat bagian lain tetap penting supaya bisa memahami arsitektur program secara lebih lengkap.
+
+2. Menurut saya, Observer pattern memudahkan untuk menambah subscriber karena publisher tidak perlu banyak diubah saat ada subscriber baru. Kita cukup menambahkan subscriber ke daftar yang sudah ada, lalu notifikasi bisa dikirim ke semuanya. Namun, kalau yang ditambah adalah lebih dari satu instance Main app, itu lebih rumit. Soalnya harus dipikirkan sinkronisasi data, pembagian tanggung jawab, dan kemungkinan inkonsistensi antar publisher. Jadi menambah subscriber cukup mudah, tetapi menambah banyak publisher tidak sesederhana itu.
+
+3. Saya belum terlalu banyak mencoba membuat test sendiri atau memperbaiki dokumentasi Postman collection, karena fokus saya masih pada implementasi fitur utama. Namun, menurut saya hal itu tetap penting karena bisa membantu testing yang lebih terstruktur dan memudahkan anggota tim lain memahami API yang tersedia.
+
